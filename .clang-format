@@ -1,0 +1,16 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+AlignConsecutiveMacros: Consecutive
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+BraceWrapping:
+  AfterFunction: true
+BreakBeforeBraces: Custom
+ColumnLimit: 78
+DerivePointerAlignment: false
+IndentWidth: 4
+PointerAlignment: Right
+SortIncludes: Never
+...
