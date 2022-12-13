@@ -18,7 +18,8 @@ jobs:
           clang-cl --target=${{ matrix.arch }}-pc-windows-msvc \
                    -v -fuse-ld=lld -Brepro -O2 -LD -MD \
                    api-ms-win-core-path-l1-1-0.c shlwapi.lib \
-                   -link -def:api-ms-win-core-path-l1-1-0.def
+                   -link -def:api-ms-win-core-path-l1-1-0.def \
+                   -noimplib -timestamp:0
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.arch }}-pc-windows-msvc
