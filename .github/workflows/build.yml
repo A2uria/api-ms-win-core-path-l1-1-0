@@ -1,7 +1,5 @@
 name: Build
-
 on: [push, pull_request, workflow_dispatch]
-
 jobs:
   build:
     name: ${{ matrix.arch }}-pc-windows-msvc
@@ -15,11 +13,10 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          clang-cl --target=${{ matrix.arch }}-pc-windows-msvc \
-                   -v -fuse-ld=lld -Brepro -O2 -LD -MD \
-                   api-ms-win-core-path-l1-1-0.c shlwapi.lib \
-                   -link -def:api-ms-win-core-path-l1-1-0.def \
-                   -noimplib -timestamp:0
+          clang-cl --target=${{ matrix.arch }}-pc-windows-msvc -Brepro -LD \
+                   -O2 -Zl -fuse-ld=lld -v api-ms-win-core-path-l1-1-0.c \
+                   -link -def:api-ms-win-core-path-l1-1-0.def -noimplib \
+                   shlwapi.lib
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.arch }}-pc-windows-msvc
