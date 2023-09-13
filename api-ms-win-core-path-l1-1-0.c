@@ -142,3 +142,9 @@ BOOL WINAPI PathIsUNCEx(PCWSTR pszPath, PCWSTR *ppszServer)
 {
     return PathIsUNCW(pszPath);
 }
+
+BOOL WINAPI _DllMainCRTStartup(HINSTANCE const instance, DWORD const reason,
+                               LPVOID const reserved)
+{
+    return TRUE;
+}
