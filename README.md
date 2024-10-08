@@ -2,6 +2,8 @@
 
 A minimal implementation of `api-ms-win-core-path-l1-1-0.dll` for Windows 7.
 
+The DLL is roughly 4 KiB, no CRT required.
+
 ## Build Instructions
 
 ```bash
@@ -34,3 +36,7 @@ clang-cl -Brepro -LD -O2 -Zl -fuse-ld=lld api-ms-win-core-path-l1-1-0.c -link -d
 | `PathCchStripPrefix`         | *not implemented*      |
 | `PathCchStripToRoot`         | `PathStripToRootW`     |
 | `PathIsUNCEx`                | `PathIsUNCW`           |
+
+## Similar projects
+
+- [Chuyu-Team/YY-Thunks](https://github.com/Chuyu-Team/YY-Thunks)
